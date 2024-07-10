@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+
+<ReadThisDocument>
+    <name>Peppe</name>
+    <surname>Bharath</surname>
+    <identify>Thippireddy</identify>
+    <DateOfBirth>18/may/1981</DateOfBirth>
+    <VehicleType>Car</VehicleType>
+    <DateOfIssue>11/june/2012</DateOfIssue>
+    <ExpirtyDate>11/june/2015</ExpirtyDate>
+    <Photo location="servername/filename" />
+
+    <readParagraph>
+        <info1>stevens dr</info1>
+        <info2>king of prussia</info2>
+        <info3>PA</info3>
+        <info4>USA</info4>
+        <info5>19406</info5>
+    </readParagraph>
+</ReadThisDocument>
