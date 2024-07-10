@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- * Attributi dello schema:
+1. Qui si fò riferimento agli standard
+2. Assegnazione namespace
+3. tns, sta per target name space ma potremmo mettere qualsiasi cosa, questo verrà utilizzato nel file xml e
+dallo schema stesso per identificare in modo univoco gli elementi e gli attributi
+4. qualified, ossia che il documento.xml dev'essere validato.
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.primaS.com/Person"
+        xmlns:person="http://www.primaS.com/Person"
+        elementFormDefault="qualified">
+
+
+
+    <!-- Definizione degli elementi e tipi complessi -->
+    <complexType name="Person">
+        <sequence>
+            <element name="name" type="person:string20"></element>
+            <element name="surname" type="person:string20"></element>
+            <element name="email" type="person:customFormatEmail"></element>
+            <element name="phone" type="person:customFormatPhone"></element>
+        </sequence>
+    </complexType>
+
+    <simpleType name="string20">
+        <restriction base="string">
+            <pattern value="\S+(\s+\S+){4,19}"/>
+            <minLength value="5"/>
+            <maxLength value="255"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="minAge">
+        <restriction base="string">
+            <minInclusive value="18"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="customFormatEmail">
+        <restriction base="string">
+            <pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="customFormatPhone">
+        <restriction base="string">
+            <pattern value="[0-9]{10}"/>
+        </restriction>
+    </simpleType>
+</schema>

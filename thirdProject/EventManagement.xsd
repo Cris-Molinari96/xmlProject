@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- * Attributi dello schema:
+1. Qui si fò riferimento agli standard
+2. Assegnazione namespace
+3. tns, sta per target name space ma potremmo mettere qualsiasi cosa, questo verrà utilizzato nel file xml e
+dallo schema stesso per identificare in modo univoco gli elementi e gli attributi
+4. qualified, ossia che il documento.xml dev'essere validato.
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.primaS.com/EventMangement"
+        xmlns:tns="http://www.primaS.com/EventMangement"
+        elementFormDefault="qualified">
+
+
+    <include schemaLocation="Partecipant.xsd"/>
+    <include schemaLocation="Event.xsd"/>
+    <include schemaLocation="Organizer.xsd"/>
+    <include schemaLocation="Venue.xsd"/>
+
+    <!-- Definizione degli elementi e tipi complessi -->
+    <element name="EventManagement" type="tns:EventManagement"/>
+
+    <complexType name="EventManagement">
+        <sequence>
+            <element name="direttore" type="string"></element>
+            <element name="event" type="tns:Event"></element>
+            <element name="organizer" type="tns:Organizer"></element>
+            <element name="partecipant" type="tns:Partecipant"></element>
+            <element name="venue" type="tns:Venue"></element>
+        </sequence>
+
+        <attribute
+                name="id"
+                type="tns:limitAttributeId "
+                use="required"/>
+    </complexType>
+
+    <simpleType name="limitAttributeId ">
+        <restriction base="int">
+            <minInclusive value="0"/>
+            <maxInclusive value="9"/>
+
+            <!--            <pattern value="[0-9]*"/>-->
+        </restriction>
+    </simpleType>
+</schema>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- * Attributi dello schema
+1. Qui si fò riferimento agli standard
+2. Assegnazione namespace
+3. tns, sta per target name space ma potremmo mettere qualsiasi cosa, questo verrà utilizzato nel file xml e
+dallo schema stesso per identificare in modo univoco gli elementi e gli attributi
+4. qualified, ossia che il documento.xml dev'essere validato.
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.primaS.com/Patient"
+        xmlns:tns="http://www.primaS.com/Patient"
+        elementFormDefault="qualified">
+    <!-- elementFormDefault può essere utilizzato per convalidare un file.xml o non,
+    se decidiamo di configurarlo come unqualified allora andremo a togliere le associazioni dagli elementi quindi in questo caso tns -->
+
+    <!-- ! Definizione degli elementi e tipi che devono essere validati
+    Bisogna far riferimento al targetNameSpace,
+    ma al posto di tns avrei potuto mettere qualsiasi cosa-->
+
+    <!-- Tutte queste configurazioni servono al processore nella fase di validazione e associazione del documento xml a questo schema -->
+
+    <element name="Patient" type="tns:Patient"/>
+    <!-- ! I tipi complessi sono simili alle classi java,
+    e un tipo complesso può utilizzare altri tipi complessi -->
+    <complexType name="Patient">
+        <!-- L'ordine della sequenza dev'essere rispettato-->
+        <sequence>
+            <element name="name" type="tns:String15Chars"/>
+            <element name="surname" type="string"/>
+            <element name="age" type="int"/>
+            <element name="gender" type="tns:gender" minOccurs="0"/>
+            <element name="phone" type="tns:limitPhone" minOccurs="1"/>
+
+            <!-- Nuovo elemento che fa riferimento al tipo complesso-->
+            <element name="paymentType" type="tns:PaymentType"/>
+        </sequence>
+
+        <!-- Creazione di un attributo
+         - renderlo obbligatoriocon use
+         - anche l'attributo può avere dei tipi semplici configurati-->
+        <attribute
+                name="id"
+                type="tns:limitAttributeId "
+                use="required"/>
+
+    </complexType>
+
+    <!--    In seugito abbiamo aggiunto quest'altro pezzo di codice
+     per permettere una scelta di pagamento attraverso l'attributo attributi choice.
+      Ora per poter utilizzare questi due tipi di pagamento, dobbiamo necessariamente inserire un nuovo elemento nella sequence in alto-->
+    <complexType name="PaymentType">
+        <choice>
+            <element name="cash" type="decimal"/>
+            <element name="insurance"
+                     type="tns:Insurance"/> <!-- In questo modo andiamo ad utilizzare un'altro tipo complesso -->
+        </choice>
+    </complexType>
+
+    <!--    L'elemento insurance definito sopra, utilizza questo dato,
+    qui stiamo imparando a definire senza una sequenza-->
+    <complexType name="Insurance">
+        <all>
+            <element name="provider" type="string"/>
+            <element name="limit" type="tns:limitInsurance"/>
+        </all>
+    </complexType>
+
+    <!-- !  Definire e creazione del tipo semplice che ci permette di
+    estendere e aggiungere delle restrizioni dati dall'utilizzo dei tipi complessi-->
+    <simpleType name="String15Chars">
+        <restriction base="string">
+            <maxLength value="15"/>
+        </restriction>
+    </simpleType>
+
+    <!-- ! Enumerazione-->
+    <simpleType name="gender">
+        <restriction base="string">
+            <enumeration value="M"/>
+            <enumeration value="F"/>
+        </restriction>
+    </simpleType>
+
+    <!--    Imposto un limite massimo seconod cui l'assicurazione è disposta a pagare-->
+    <simpleType name="limitInsurance">
+        <restriction base="decimal">
+            <maxInclusive value="1000"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="limitPhone">
+        <restriction base="string">
+            <minLength value="10"/>
+            <maxLength value="14"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="limitAttributeId ">
+        <restriction base="int">
+            <minInclusive value="0"/>
+            <maxInclusive value="9"/>
+
+<!--            <pattern value="[0-9]*"/>-->
+        </restriction>
+    </simpleType>
+</schema>

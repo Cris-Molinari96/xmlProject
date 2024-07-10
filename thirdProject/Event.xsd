@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- * Attributi dello schema:
+1. Qui si fò riferimento agli standard
+2. Assegnazione namespace
+3. tns, sta per target name space ma potremmo mettere qualsiasi cosa, questo verrà utilizzato nel file xml e
+dallo schema stesso per identificare in modo univoco gli elementi e gli attributi
+4. qualified, ossia che il documento.xml dev'essere validato.
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://www.primaS.com/EventMangement"
+        elementFormDefault="qualified">
+
+
+    <!-- Definizione degli elementi e tipi complessi -->
+    <complexType name="Event">
+        <sequence>
+            <element name="name" type="tns:string20"></element>
+            <element name="description" type="string"></element>
+            <element name="ticketPrice" type="double"></element>
+            <element name="date" type="tns:dateCustomFormat"></element>
+            <element name="startTime" type="time"></element>
+            <element name="entTime" type="time"></element>
+        </sequence>
+    </complexType>
+
+    <simpleType name="dateCustomFormat">
+        <restriction>
+            <pattern value="\d{2}-\d{2}-\d{4}"/>
+        </restriction>
+    </simpleType>
+</schema>

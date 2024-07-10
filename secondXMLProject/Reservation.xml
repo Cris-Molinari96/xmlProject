@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+xmlns:tns -> al targetNameSpace definito nell'xsd
+Con schemaLocation andiamo a puntare direttamente al file xsd-->
+<tns:Reservation
+        xmlns:tns="http://www.primaS.com/Reservation"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.primaS.com/Reservation Reservation.xsd">
+
+    <tns:Passenger>
+    <tns:name>Beppe</tns:name>
+    <tns:surname>Franco</tns:surname>
+    <tns:age>18</tns:age>
+    <tns:email>beppe@franco.it</tns:email>
+    <tns:gender>M</tns:gender>
+    <tns:infoForPassenger1>InfoPass1</tns:infoForPassenger1>
+    <tns:infoForPassenger2>InfoPass2</tns:infoForPassenger2>
+</tns:Passenger>
+
+<tns:VoyageType>
+        <tns:Flight>
+            <tns:infoVoyage></tns:infoVoyage>
+            <tns:destination></tns:destination>
+            <tns:codeVoyage></tns:codeVoyage>
+            <tns:numberSeats>3</tns:numberSeats>
+            <tns:infoOnlyFlight1></tns:infoOnlyFlight1>
+            <tns:infoOnlyFlight2></tns:infoOnlyFlight2>
+        </tns:Flight>
+    </tns:VoyageType>
+
+</tns:Reservation>

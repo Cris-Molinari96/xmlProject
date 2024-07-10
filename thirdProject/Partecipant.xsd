@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- * Attributi dello schema:
+1. Qui si fò riferimento agli standard
+2. Assegnazione namespace
+3. tns, sta per target name space ma potremmo mettere qualsiasi cosa, questo verrà utilizzato nel file xml e
+dallo schema stesso per identificare in modo univoco gli elementi e gli attributi
+4. qualified, ossia che il documento.xml dev'essere validato.
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://www.primaS.com/EventMangement"
+        elementFormDefault="qualified">
+
+<include schemaLocation="Person.xsd"/>
+
+    <!-- Definizione degli elementi e tipi complessi -->
+    <complexType name="Partecipant">
+        <complexContent>
+            <extension base="tns:Person">
+                <sequence>
+                    <element name="age" type="tns:minAge"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+</schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+xmlns:tns -> al targetNameSpace definito nell'xsd
+Con schemaLocation andiamo a puntare direttamente al file xsd-->
+<tns:Patient
+        xmlns:tns="http://www.primaS.com/Patient"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.primaS.com/Patient" id="1" >
+
+    <tns:name>Beppe</tns:name>
+    <tns:surname>Franco</tns:surname>
+    <tns:age>123</tns:age>
+    <tns:gender>M</tns:gender>
+    <tns:phone>+39 3516698350</tns:phone>
+    <tns:paymentType>
+        <!--        <tns:cash>10.5</tns:cash>-->
+        <!--  ! Scelta se cash o  assicurazione -->
+                <tns:insurance>
+                                <tns:provider>Red Prima Solution</tns:provider>
+                                <tns:limit>123</tns:limit>
+                </tns:insurance>
+    </tns:paymentType>
+
+</tns:Patient>

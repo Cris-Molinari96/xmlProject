@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.3.2 
+Vedere <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+Generato il: 2024.07.04 alle 04:34:07 PM CEST 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.primaS.com/Patient">
+    <schemaBindings map="false">
+      <package name="xml.and.mb2g.jaxb"/>
+    </schemaBindings>
+    <bindings scd="~tns:Patient">
+      <class ref="xml.and.mb2g.jaxb.Patient"/>
+    </bindings>
+    <bindings scd="~tns:PaymentType">
+      <class ref="xml.and.mb2g.jaxb.PaymentType"/>
+    </bindings>
+    <bindings scd="~tns:Insurance">
+      <class ref="xml.and.mb2g.jaxb.Insurance"/>
+    </bindings>
+    <bindings scd="~tns:gender">
+      <typesafeEnumClass ref="xml.and.mb2g.jaxb.Gender"/>
+    </bindings>
+  </bindings>
+</bindings>
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- * Attributi dello schema:
+1. Qui si fò riferimento agli standard
+2. Assegnazione namespace
+3. tns, sta per target name space ma potremmo mettere qualsiasi cosa, questo verrà utilizzato nel file xml e
+dallo schema stesso per identificare in modo univoco gli elementi e gli attributi
+4. qualified, ossia che il documento.xml dev'essere validato.
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.primaS.com/Reservation"
+        xmlns:tns="http://www.primaS.com/Reservation"
+        elementFormDefault="qualified">
+    <!--Includiamo gli schemi per poter accedere attraverso tns, qui vengono inclusi -->
+    <include schemaLocation="Passenger.xsd"/>
+    <include schemaLocation="Flight.xsd"/>
+    <include schemaLocation="Train.xsd"/>
+    <include schemaLocation="VoyageType.xsd"/>
+
+    <!-- Definizione degli elementi e tipi complessi -->
+    <element name="Reservation">
+        <complexType>
+            <sequence>
+                <element name="Passenger" type="tns:Passenger"/>
+                <element name="VoyageType" type="tns:VoyageType"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

@@ -1,0 +1,6 @@
+xml\and\mb2g\jaxb\package-info.class
+xml\and\mb2g\jaxb\ObjectFactory.class
+xml\and\mb2g\jaxb\Patient.class
+xml\and\mb2g\jaxb\Insurance.class
+xml\and\mb2g\jaxb\Gender.class
+xml\and\mb2g\jaxb\PaymentType.class

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<DriversLicense status="suspend"> <!-- Elemento root principale-->
+
+    <!-- Tutti i metadati all'interno del root sono customizzati e sono figli di DriversLicense,
+     sono tag che non esistono ma che utilizziamo specificamente per questo progetto -->
+    <Number>12345</Number>
+    <FirstName>Beppe</FirstName>
+    <LastName>Franco</LastName>
+    <veichleType>Maserati Grecale</veichleType>
+    <Photo location="C:\Users\Cristian Molinari\Downloads\the_grand_universe___print__by_antifan_real_daiveyq.jpg"/>
+    <!-- location è un attributo e ci sta fornendo informazioni aggiuntive sul tag stesso, in questo caso dove trovare la foto
+    come il percorso di dove si trova la mia img, oppure un url, -->
+    <DateOfBirth>10/10/10</DateOfBirth>
+    <DateOdIssue><![CDATA[YYYY-MM- DD]]]></DateOdIssue>
+    <ExpiryDate>24/24/24</ExpiryDate>
+
+    <Address>
+        <City>Paraguay</City>
+        <Street>Via del parà</Street>
+        <State>Paraguay</State>
+        <ZipCode>583472923891298</ZipCode>
+    </Address>
+</DriversLicense>
+
+        <!--Quindi ragionando possiamo dire che questa potrebbe essere benissimo una classe java non pensi ?-->

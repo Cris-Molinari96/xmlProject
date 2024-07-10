@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+xmlns:tns -> al targetNameSpace definito nell'xsd
+Con schemaLocation andiamo a puntare direttamente al file xsd-->
+<tns:EventManagement
+        xmlns:tns="http://www.primaS.com/EventMangement"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.primaS.com/EventMangement  EventManagement.xsd"
+        id="1">
+
+    <tns:direttore> name </tns:direttore>
+
+    <tns:event>
+        <tns:name>test</tns:name>
+        <tns:description>description</tns:description>
+        <tns:ticketPrice>22.5</tns:ticketPrice>
+        <tns:date>2020/10/01</tns:date>
+        <tns:startTime>18:00:00</tns:startTime>
+        <tns:entTime>24:00:00</tns:entTime>
+    </tns:event>
+
+    <tns:organizer>
+        <name>nameOrg</name>
+        <surname>surnameOrg</surname>
+        <email>cewfwc.it</email>
+        <phone>12345121312312678910</phone>rave
+    </tns:organizer>
+
+    <tns:partecipant>
+        <name>fewfwe</name>
+        <surname>few</surname>
+        <email>cere</email>
+        <phone>124074124122342342</phone>
+        <age>12</age>
+    </tns:partecipant>
+
+    <tns:venue>
+        <tns:name>via address</tns:name>
+        <tns:street>Na</tns:street>
+        <tns:city>NA</tns:city>
+        <tns:state>IT</tns:state>
+        <tns:country>Italy</tns:country>
+        <tns:zipcode>123</tns:zipcode>
+    </tns:venue>
+
+</tns:EventManagement>
