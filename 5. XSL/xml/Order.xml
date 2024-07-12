@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+Informazioni relative rispetto ad un file xsd, in assenza di tale file non sono necessarie
+xmlns:tns -> al targetNameSpace definito nell'xsd
+Con schemaLocation andiamo a puntare direttamente al file xsd-->
+<Order id="12345">
+    <customerName>Peppe Franco</customerName>
+    <item>
+        <itemId>987</itemId>
+        <itemName>Iphone 7</itemName>
+        <price>200€</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <itemId>988</itemId>
+        <itemName>Iphone 15</itemName>
+        <price>2000€</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+    <itemId>989</itemId>
+    <itemName>Samsuung 24</itemName>
+    <price>1.600€</price>
+    <quantity>1</quantity>
+</item>
+
+</Order>
