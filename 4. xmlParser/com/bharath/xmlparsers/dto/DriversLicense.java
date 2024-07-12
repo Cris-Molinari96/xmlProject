@@ -48,4 +48,14 @@ public class DriversLicense {
 		this.address = address;
 	}
 
+	@Override
+	public String toString() {
+		return "DriversLicense{" +
+				"status='" + status + '\'' +
+				", number=" + number +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", address=" + address +
+				'}';
+	}
 }

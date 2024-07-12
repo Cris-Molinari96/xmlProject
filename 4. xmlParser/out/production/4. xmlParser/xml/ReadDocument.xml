@@ -2,6 +2,7 @@
 
 
 <ReadThisDocument>
+
     <name>Peppe</name>
     <surname>Bharath</surname>
     <identify>Thippireddy</identify>
@@ -9,7 +10,7 @@
     <VehicleType>Car</VehicleType>
     <DateOfIssue>11/june/2012</DateOfIssue>
     <ExpirtyDate>11/june/2015</ExpirtyDate>
-    <Photo location="servername/filename" />
+    <Photo location="servername/filename"/>
 
     <readParagraph>
         <info1>stevens dr</info1>
@@ -18,4 +19,5 @@
         <info4>USA</info4>
         <info5>19406</info5>
     </readParagraph>
+
 </ReadThisDocument>

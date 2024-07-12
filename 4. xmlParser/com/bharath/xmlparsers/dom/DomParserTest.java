@@ -29,11 +29,12 @@ public class DomParserTest {
 
         /* Con .parse viene convertito il contenuto dell'xml quindi una sequenza di caratteri o byte in qualcosa di manipolabile, in questo caso un albero DOM */
         /* Quello che facciamo è convertire dei dati in un formato, in una sequenza manipolabile
-         * In quetoo momento gli stiamo indicand il percorso del file ma può essere ottenuto in diversi modi,
-         * parse legge il flusso di dati che gli passiamo in ingresso, se supera le regole sintattiche costruisce un albero DOM
-         * Ogni elemento del documento XML diventa un nodo nell'albero ACCESSIBILE. */
+          In questo momento gli stiamo indicando il percorso del file ma può essere ottenuto in diversi modi,
+          parse legge il flusso di dati che gli passiamo in ingresso, se supera le regole sintattiche costruisce un albero DOM
+          Ogni elemento del documento XML diventa un nodo nell'albero ACCESSIBILE.
+          Document rappresenta il nostro documento xml il quale può essere accessibile ovunque
+          parse = analizzatore, diamo in pasto un percorso rispettivamente alla poszione del file da analizzare da cui verrà il documento */
         Document document = documentBuilder.parse(ClassLoader.getSystemResourceAsStream("xml/ReadDocument.xml"));
-
         ReadDocument readDocument = new ReadDocument();
 
         /* Ho due possibilità se ho più attributi con lo stesso nome, posso salvarli nella lista e iterarla
